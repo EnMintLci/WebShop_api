@@ -2,3 +2,9 @@ name: Disabled old deployment
 
 on:
   workflow_dispatch:
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Old deployment disabled"
