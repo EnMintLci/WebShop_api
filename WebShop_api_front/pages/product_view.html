@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/product_view_style.css
+    ">
+</head>
+<body>
+    <div class="header">header</div>
+    <div class="product-page">
+    
+    <!-- LEFT / TOP: Product Media (Main Image + Thumbnails) -->
+    <div class="product-media">
+        <div class="main-image-container">
+            <img id="mainProductImage" src="../images/no_image.jpg" alt="Product Image">
+        </div>
+        
+        <!-- Container where your future dynamic thumbnails will land -->
+        <div id="thumbnailContainer" class="thumbnail-container">
+            <!-- Example static thumbnail for testing layout -->
+            <img src="../images/no_image.jpg" alt="Thumbnail" class="product-thumb">
+        </div>
+    </div>
+
+    <!-- RIGHT / BOTTOM: Product Information -->
+    <div class="product-details">
+        <h1 id="product-name">Loading product name...</h1>
+        <p id="product-price" class="price-tag"></p>
+
+        <div id="stock-section" class="stock-container">
+            <!-- Stock badges or size list will go here -->
+        </div>
+
+        <div class="description-container">
+            <h3>Description</h3>
+            <p id="product-description">Product details and description will appear here.</p>
+        </div>
+    </div>
+
+</div>
+    
+
+    <script src="../java/product_view.js">
+        </script>
+</body>
+</html>

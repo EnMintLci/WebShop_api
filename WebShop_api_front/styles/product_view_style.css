@@ -1,0 +1,136 @@
+/* Responsive 2-column layout using flexible fractions instead of fixed pixels */
+/* 1. Overall Page Grid Layout */
+.product-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50/50 split on desktop */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    align-items: start;
+}
+
+/* 2. Left Side: Media Container */
+.product-media {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 3. Locking down the Main Image size (Prevents it from blowing up) */
+.main-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Forces the frame to stay perfectly square */
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden; /* Crops anything that tries to spill out */
+}
+
+#mainProductImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the square neatly without distorting */
+    display: block;
+}
+
+/* 4. Thumbnail styling so they shrink naturally */
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Allows scrolling if there are too many thumbs */
+}
+
+.product-thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.product-thumb:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 5. Right Side: Details */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 6. Mobile Responsiveness: Stack columns on smaller screens */
+@media (max-width: 768px) {
+    .product-page {
+        grid-template-columns: 1fr; /* Turns into a single column stack */
+    }
+}
+
+.product-page-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split screen 50/50, or adjust as needed */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Left side: Image Viewer Stack */
+.product-image-viewer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Keeps the main image perfectly square and responsive */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.main-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills container nicely without stretching */
+}
+
+/* Thumbnail Grid */
+.product-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); /* Auto-fits thumbs nicely */
+    gap: 10px;
+}
+
+.product-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.product-thumb:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Right side: Product Info */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Mobile Responsiveness: Stacks columns on smaller screens */
+@media (max-width: 768px) {
+    .product-page-container {
+        grid-template-columns: 1fr;
+    }
+}

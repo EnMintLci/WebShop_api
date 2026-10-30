@@ -1,0 +1,15 @@
+.grid-item{
+    margin: 20px;
+    color: brown;
+    text-align: center;
+  
+    border: 1px solid black;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+
+}
+h1{
+    text-align: center;
+}
